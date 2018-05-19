@@ -1,0 +1,382 @@
+html, body {
+    background-color: #fff;
+    color: #636b6f;
+    font-family: Lato, sans-serif;
+    font-weight: 100;
+    height: 100vh;
+    margin: 0;
+}
+
+:before, :after{
+    content: " ";
+    display: table;
+}
+
+
+
+
+/*--------------- NAVIGATION BAR ---------------*/
+
+.top-right {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.links > div a.navlink {
+    color: #636b6f;
+    padding: 0 25px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    float: right;
+    margin-top: 18px;
+}
+
+.header{
+    height: 80px;
+    width: 100%;
+    top: 10px;
+    position: fixed;
+    z-index: 3;
+    transition: 0.4s ease transform, 0.3s ease height, 0.3s ease width, 0.3s ease background-color, 0.3s ease box-shadow, 0.2s ease top;
+    background-color: transparent;
+}
+
+.logocolata{
+    margin-right: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.logocolata img{
+    height: 55px;
+    transition: all 0.3s ease-in-out;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+
+.header-sticky{
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55px;
+    background-color: #fff;
+    box-shadow: 0 2.5px 30px 0 rgba(0,0,0,0.13);
+}
+
+/*----------- END OF NAVIGATION BAR ------------*/
+
+
+/*--------------- HEADER ---------------*/
+
+
+header{
+    height: 75vh;
+    min-height: 600px;
+    background-size: 100% !important;
+    background-repeat: no-repeat !important;
+    background-color: #f9f9f9 !important;
+    position: relative;
+}
+
+header .container{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+header .container .text{
+    position: relative;
+    bottom: auto;
+    margin-top: 32px;
+}
+
+header .container .text.home{
+    position: absolute;
+    bottom: 160px;
+    width: 750px;
+    max-width: calc(100% - 30px);
+    left: 15px;
+}
+
+header .container .text h1{
+    font-size: 74px;
+}
+
+header .container .text.home h1{
+    font-size: 80px;
+    position: relative;
+    top: 0;
+    font-family: Lato;
+    font-weight: 700;
+}
+
+header .container .text p.red{
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+header .container .text.home p.red{
+    font-weight: 500;
+    font-size: 42px;
+    transition: top .3s ease-in-out,opacity .15s ease-in-out;
+    transition-delay: .15s;
+    position: relative;
+    top: 0;
+}
+
+.red{
+    color: #f0505e;
+}
+
+
+/*--------------- END OF HEADER ---------------*/
+
+
+
+section{
+    padding: 95px 0;
+}
+
+
+/*----------- SECTION INTRO ------------*/
+
+
+section.intro .container{
+    width: 900px;
+    max-width: 100%;
+}
+
+.center{
+    text-align: center;
+}
+
+section.intro .container h2{
+    margin-bottom: 24px;
+    font-size: 20px;
+    font-family: Lato;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+section.intro .container p{
+    margin-bottom: 1.5em;
+    font-size: 18px;
+    font-family: Lato;
+    margin: 0 0 10px;
+}
+
+
+/*----------- END OF SECTION INTRO ------------*/
+
+/*----------- SECTION FEATURE ------------*/
+
+section.grey{
+    background: #f9f9f9;
+}
+
+section.feature .container{
+    position: relative;
+}
+
+section.feature .container .project{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 102.5px 15px;
+}
+
+section .row{
+    width: 100%;
+    margin: auto;
+}
+
+section.feature .container .project .text h2{
+    font-size: 42px;
+    font-family: Lato;
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+section.feature .container .project .text p{
+    margin-bottom: 1.5em;
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+section.feature .container .project .image{
+    position: relative;
+}
+
+.safarifix{
+    margin-left: -1px;
+}
+
+section.feature .container .project .image img.main{
+    width: 100%;
+    z-index: -1;
+    position: relative;
+}
+
+section.feature .container .project .image img{
+    transition: 0.3s all ease-out;
+}
+
+img{
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+}
+
+section.feature .container .project .image .icons{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+section.feature .container .project.remember .image .icons img.icon:nth-child(1){
+    top: -77px !important;
+    left: 14px !important;
+    height: 270px;
+    z-index: 10;
+}
+
+section.feature .container .project.remember .image .icons img.icon:nth-child(2){
+    top: -140px !important;
+    left: auto !important;
+    right: 25px;
+    width: 280px;
+    z-index: 1;
+}
+
+section.feature .container .project.remember .image .icons img.icon:nth-child(3){
+    top: auto !important;
+    bottom: 0 !important;
+    left: 30px !important;
+    width: 108px;
+    z-index: 10;
+}
+
+section.feature .container .project .image .icons img.icon{
+    position: absolute;
+}
+
+/*----------- FEATURE TEAM ------------*/
+
+section.feature .container .project.team .image .icons .circle:nth-of-type(1){
+    width: 77.5px;
+    height: 77.5px;
+    z-index: 1;
+    left: 170px !important;
+    top: -30px !important;
+}
+
+section.feature .container .project.team .image .icons .circle:nth-of-type(2){
+    width: 44px;
+    height: 44px;
+    top: 250px !important;
+    right: 110px !important;
+    left: auto !important;
+    z-index: 1;
+}
+
+section.feature .container .project.team .image .icons .circle:nth-of-type(3){
+    width: 63px;
+    height: 63px;
+    right: 240px !important;
+    top: 100px !important;
+    left: auto !important;
+}
+
+section.feature .container .project.team .image .icons .circle:nth-of-type(4){
+    width: 46.5px;
+    height: 46.5px;
+    right: 280px !important;
+    bottom: 0 !important;
+    left: auto !important;
+}
+
+section.feature .container .project.team .image .icons .circle.line{
+    background: 0 0;
+    border: 4px solid #db3135;
+}
+
+section.feature .container .project.team .image .icons .circle{
+    background: #db3135;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    border-radius: 100%;
+    z-index: 10;
+    box-shadow: -12px 14px 35px -8px rgba(0,0,0,.3);
+}
+
+/*----------- END OF SECTION FEATURE ------------*/
+
+
+/*----------- WHAT ARE YOU WAITING FOR ------------*/
+
+.contact.cta{
+    margin-top: -50px;
+    height: 200px;
+}
+
+.contact.cta .container{
+    background: #f0505e;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 25px 15px;
+    box-shadow: 0 30px 39px -18px rgba(0,0,0,.25);
+    transition: .3s all ease-in-out;
+}
+
+.contact.cta .container p{
+    font-size: 32px;
+    font-weight: 700;
+    margin: 30px 30px 0 0;
+}
+
+.white{
+    color: #fff;
+}
+
+.container{
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+/*----------- END OF WHAT ARE YOU WAITING FOR ------------*/
+
+.quiet{
+    color: #999;
+}
+
+footer{
+    font-size: 0.8em;
+    margin: 4em 1em;
+    text-align: center;
+}
+
+footer p{
+    margin: 0.5em 0;
+}
