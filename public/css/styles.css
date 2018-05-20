@@ -387,3 +387,19 @@ footer p{
     font-size: 22px;
     font-family: Lato;
 }
+
+.nav-pills .nav-link{
+    border-radius: .5rem;
+}
+
+.nav-link{
+    padding: 1rem 1rem;
+}
+
+.colorpicker{
+    z-index: 9999 !important;
+}
+
+.modal-header{
+    flex-direction: column;
+}

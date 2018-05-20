@@ -23,8 +23,41 @@
             </div>
             
             <div class="col-md-3">
-                One of three columns
+                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#createboardmodal">
+                    <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                    Create Board
+                </button>
             </div>
         </div>
+
+        <div class="modal fade" id="createboardmodal" tabindex="-1" role="dialog" aria-labelledby="createboardmodallabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header" style="padding-bottom: 50px;">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <input class="form-control form-control-sm" id="createboardmodallabel" type="text" placeholder="Add Board Title" style="width: 75%;">
+                    <div id="change-color" class="input-group colorpicker-component" style="width: 50%; margin-top: 10px;">
+                        <input type="text" value="" class="form-control" placeholder="Change Background Color" />
+                        <span class="input-group-addon"><i></i></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Create Board</button>
+                </div>
+            </div>
+          </div>
+        </div>
     </div>
+    <script src="{{asset('js/bootstrap-colorpicker.js')}}"></script>
+    <script>
+        $('#change-color').colorpicker().on('changeColor', function(e){
+            console.log(e.color.toString('rgba'));
+            var background_color = e.color.toString('rgba');
+            $('.modal-header')[0].style.backgroundColor = background_color;
+        });
+    </script>
 @endsection

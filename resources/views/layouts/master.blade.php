@@ -18,10 +18,12 @@
 
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="{{asset('css/styles.css')}}">
-	<link rel="stylesheet" href="{{asset('css/animate.css')}}">
+	<link rel="stylesheet" href="{{asset('css/bootstrap-colorpicker.css')}}">
 
 
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -34,6 +36,7 @@
     <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.1.1.min.js"><\/script>')</script>
     <script src="{{asset('js/script.min.js')}}"></script>
     <script src="{{asset('js/app.js')}}" defer></script>
+    
     <script src="{{asset('js/parallax.min.js')}}" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
 		var scene = document.getElementById('scene');
