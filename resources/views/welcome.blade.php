@@ -2,7 +2,6 @@
 
 @section('content')
     @include('layouts.nav')
-    
     <header style="background: url('/images/todo.png');">
         <div class="container">
             <div class="text home">
@@ -79,4 +78,6 @@
     </footer>
         
 
+    
+    
 @endsection
