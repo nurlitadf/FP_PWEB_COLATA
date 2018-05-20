@@ -380,3 +380,10 @@ footer{
 footer p{
     margin: 0.5em 0;
 }
+
+/*----------------------------------------- HOME -----------------------------------------------------*/
+
+.personalboard h3{
+    font-size: 22px;
+    font-family: Lato;
+}
