@@ -13,12 +13,13 @@ class CreateBoardTable extends Migration
      */
     public function up()
     {
-        Schema::create('board', function(Blueprint $table) {
+        Schema::create('boards', function(Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->string('username');
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->text('keterangan');
+            $table->text('keterangan')->nullable();
             $table->char('background',7);
         });
 

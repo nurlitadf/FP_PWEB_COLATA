@@ -13,13 +13,12 @@ class CreateTodolistTable extends Migration
      */
     public function up()
     {
-        Schema::create('todolist', function(Blueprint $table){
+        Schema::create('todolists', function(Blueprint $table){
             $table->increments('id');
             $table->string('title');
             $table->datetime('deadline');
-            $table->unsignedInteger('board_id');
-            $table->foreign('board_id')->references('id')->on('board');
-            $table->text('keterangan');
+            $table->integer('board_id')->unsigned();
+            $table->foreign('board_id')->references('id')->on('boards');
             $table->string('status');
         });
     }

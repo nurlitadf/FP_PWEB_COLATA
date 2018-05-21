@@ -41,10 +41,11 @@
                         </button>
                         <input class="form-control form-control-sm" id="createboardmodallabel" type="text" placeholder="Add Board Title" style="width: 75%;" name="title">
                         <div id="change-color" class="input-group colorpicker-component" style="width: 50%; margin-top: 10px;">
-                            <input type="text" value="" class="form-control" placeholder="Change Background Color" name="color" />
+                            <input type="text" value="" class="form-control" placeholder="Change Background Color" name="background" />
                             <span class="input-group-addon"><i></i></span>
-                            <input type="hidden" name="username" value="{{Auth::user()->username}}">
                         </div>
+                        <input type="hidden" name="username" value="{{Auth::user()->username}}">
+                        <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
