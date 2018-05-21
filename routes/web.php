@@ -1,5 +1,6 @@
 <?php
 
+use Controllers\BoardController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +16,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/welcome', function () {
+    return view('welcome');
+});
+
 Route::get('/login', function () {
     return view('login');
 });
@@ -25,4 +30,7 @@ Route::get('/board', function () {
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/adds', 'BoardController@store');

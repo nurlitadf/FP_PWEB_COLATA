@@ -33,21 +33,24 @@
         <div class="modal fade" id="createboardmodal" tabindex="-1" role="dialog" aria-labelledby="createboardmodallabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <div class="modal-header" style="padding-bottom: 50px;">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <input class="form-control form-control-sm" id="createboardmodallabel" type="text" placeholder="Add Board Title" style="width: 75%;">
-                    <div id="change-color" class="input-group colorpicker-component" style="width: 50%; margin-top: 10px;">
-                        <input type="text" value="" class="form-control" placeholder="Change Background Color" />
-                        <span class="input-group-addon"><i></i></span>
+                <form action="/adds" method="POST">
+			{{csrf_field()}}
+                    <div class="modal-header" style="padding-bottom: 50px;">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <input class="form-control form-control-sm" id="createboardmodallabel" type="text" placeholder="Add Board Title" style="width: 75%;" name="title">
+                        <div id="change-color" class="input-group colorpicker-component" style="width: 50%; margin-top: 10px;">
+                            <input type="text" value="" class="form-control" placeholder="Change Background Color" name="color" />
+                            <span class="input-group-addon"><i></i></span>
+                            <input type="hidden" name="username" value="{{Auth::user()->username}}">
+                        </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Create Board</button>
-                </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button class="btn btn-primary" type="submit">Create Board</button>
+                    </div>
+                </form>
             </div>
           </div>
         </div>
@@ -59,5 +62,9 @@
             var background_color = e.color.toString('rgba');
             $('.modal-header')[0].style.backgroundColor = background_color;
         });
+        function submit(){
+            var titles = $('#createboardmodallabel').value;
+            var colour = $('#bg').value;
+        }
     </script>
 @endsection
