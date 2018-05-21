@@ -19,6 +19,7 @@ class CreateTodolistTable extends Migration
             $table->datetime('deadline');
             $table->integer('board_id')->unsigned();
             $table->foreign('board_id')->references('id')->on('boards');
+            $table->text('keterangan');
             $table->string('status');
         });
     }

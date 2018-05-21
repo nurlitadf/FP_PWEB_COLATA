@@ -1,7 +1,18 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
 	crossorigin="anonymous"></script>
 
-@include('home')
+@extends('home')
+@section('boardcontent')
+	<div class="personalboard">
+		<h3>Personal Board</h3>
+		@foreach($boards as $p)
+		{{$p->id}}
+		{{$p->title}}
+		{{$p->background}}
+		@endforeach
+	</div>
+@endsection
+
 
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -11,9 +22,6 @@
 		$('#v-pills-boards-tab').addClass('active');
 		$('#v-pills-boards-tab').addClass('show');
 		$('#v-pills-boards-tab').attr("aria-selected", "true");
-		$('#v-pills-home').removeClass('active');
-		$('#v-pills-home').removeClass('show');
-		$('#v-pills-boards').addClass('active');
-		$('#v-pills-boards').addClass('show');
+		$('.homecontent').hide();
 	});
 </script>

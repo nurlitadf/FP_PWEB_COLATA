@@ -9,17 +9,11 @@
                 <a class="nav-link" id="v-pills-boards-tab" href="{{ url('/board') }}">Boards</a>
             </div>
             
-            <div class="tab-content col-md-7" id="v-pills-tabContent">
-                <div class="tab-pane fade show active" id="v-pills-home">
-                Yay
+            <div class="col-md-7">
+                <div class="homecontent">
+                    yay
                 </div>
-                
-                <div class="tab-pane fade" id="v-pills-boards">
-                    <div class="personalboard">
-                        <h3>Personal Board</h3>
-                    </div>
-                </div>
-            
+                @yield('boardcontent')
             </div>
             
             <div class="col-md-3">

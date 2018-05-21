@@ -7,11 +7,9 @@ use App\Board;
 
 class BoardController extends Controller
 {
-    public function show(int $id){
-    	$todolists = Board::where('user_id',id)->get();
-    	foreach ($todolists as $todolist) {
-    		echo $todolist->id;
-    	}
+    public function index(Request $request){
+        $boards = Board::all();
+        return view('board', compact('boards'));
     }
 
     public function create(){

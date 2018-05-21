@@ -30,7 +30,10 @@ Route::get('/board', function () {
 
 Auth::routes();
 
+Route::get('/board', 'BoardController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Route::resource('/home', 'BoardController');
 
 Route::post('/adds', 'BoardController@store');
