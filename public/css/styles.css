@@ -403,3 +403,28 @@ footer p{
 .modal-header{
     flex-direction: column;
 }
+
+/*----------------------BOARDS-----------------------------*/
+
+.transition{
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+}
+
+.card:hover .text-view{
+     top: 50%;
+     opacity:1;
+}
+
+.text-view{
+    position:absolute;
+    top: 60%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity:0;
+}

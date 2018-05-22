@@ -5,11 +5,21 @@
 @section('boardcontent')
 	<div class="personalboard">
 		<h3>Personal Board</h3>
+		
+		<div class="row">
 		@foreach($boards as $p)
-		{{$p->id}}
-		{{$p->title}}
-		{{$p->background}}
+	  		<div class="col-md-4" style="padding-bottom: 20px;">
+	    		<div class="card card-board" id="board{{$p->id}}" style="background-color: {{$p->background}}; height: 75px; cursor: pointer;">
+	    	  		<div class="card-body">
+	        			<h5 class="card-title">{{$p->title}}</h5>
+	        			<div class="text-view transition">
+	                    	<h4>View Details</h4>
+	                	</div>
+	      			</div>
+	    		</div>
+	  		</div>
 		@endforeach
+		</div>
 	</div>
 @endsection
 
