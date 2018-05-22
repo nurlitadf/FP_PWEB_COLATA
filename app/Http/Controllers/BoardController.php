@@ -21,8 +21,4 @@ class BoardController extends Controller
         Board::create($request->all());
         return back();
     }
-
-    public function show(Board $board){
-        return view('todolist.showboard', compact('board'));
-    }
 }
