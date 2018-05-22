@@ -7,11 +7,11 @@
 		<h3>Personal Board</h3>
 		
 		<div class="row">
-		@foreach($boards as $p)
+		@foreach($boards as $board)
 	  		<div class="col-md-4" style="padding-bottom: 20px;">
-	    		<div class="card card-board" id="board{{$p->id}}" style="background-color: {{$p->background}}; height: 75px; cursor: pointer;">
+	    		<div class="card card-board" id="board{{$board->id}}" onclick="document.location = '{{ URL::to('/boards/'.$board->id) }}';" style="background-color: {{$board->background}}; height: 75px; cursor: pointer;">
 	    	  		<div class="card-body">
-	        			<h5 class="card-title">{{$p->title}}</h5>
+	        			<h5 class="card-title">{{$board->title}}</h5>
 	        			<div class="text-view transition">
 	                    	<h4>View Details</h4>
 	                	</div>

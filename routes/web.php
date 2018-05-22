@@ -24,16 +24,10 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/board', function () {
-    return view('board');
-});
-
 Auth::routes();
 
 Route::get('/board', 'BoardController@index');
-
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::resource('/home', 'BoardController');
-
 Route::post('/adds', 'BoardController@store');
+Route::get('/boards/{board}', 'BoardController@show');
