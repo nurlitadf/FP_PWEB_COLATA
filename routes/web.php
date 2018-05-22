@@ -34,6 +34,8 @@ Route::get('/board', 'BoardController@index');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::resource('/home', 'BoardController');
+Route::post('/addtodolist','TodolistController@store');
 
 Route::post('/adds', 'BoardController@store');
+
+Route::get('/board/{id}','TodolistController@show');
