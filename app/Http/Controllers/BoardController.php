@@ -8,6 +8,11 @@ use Auth;
 
 class BoardController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index(Request $request){
         $boards = Board::where('username',Auth::user()->username)->get();
         return view('board', compact('boards'));
