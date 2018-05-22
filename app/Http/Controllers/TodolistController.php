@@ -12,4 +12,9 @@ class TodolistController extends Controller
         $todolist = Todolist::where('board_id',$id)->get();
         return view('todolist', compact('todolist'));
     }
+
+    public function store(Request $request){
+    	Todolist::create($request->all());
+        return back();
+    }
 }

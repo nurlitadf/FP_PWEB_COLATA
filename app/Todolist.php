@@ -8,6 +8,8 @@ class Todolist extends Model
 {
     //
     protected $fillable = [
-        'deadline','board_id', 'keterangan', 'status',
+        'title','deadline','board_id', 'keterangan', 'status',
     ];
+
+    public $timestamps = false;
 }
