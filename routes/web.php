@@ -39,3 +39,5 @@ Route::post('/addtodolist','TodolistController@store');
 Route::post('/adds', 'BoardController@store');
 
 Route::get('/board/{id}','TodolistController@show');
+
+Route::post('/invite','TodolistController@adduser');

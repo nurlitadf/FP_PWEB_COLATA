@@ -28,7 +28,7 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <form action="/adds" method="POST">
-			{{csrf_field()}}
+			     {{csrf_field()}}
                     <div class="modal-header" style="padding-bottom: 50px;">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
