@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Board;
 use Auth;
+use App\Userboard;
 
 class BoardController extends Controller
 {
@@ -14,7 +15,7 @@ class BoardController extends Controller
     }
     
     public function index(Request $request){
-        $boards = Board::where('username',Auth::user()->username)->get();
+        $boards = Board::crossjoin('userboards','boards.id','userboards.board_id')->where('userboards.user_id','=',Auth::user()->id)->get();
         return view('board', compact('boards'));
     }
 
@@ -23,7 +24,13 @@ class BoardController extends Controller
     }
 
     public function store(Request $request){
-        Board::create($request->all());
+        Board::insert(
+            ['title'=>$request->input('title'),'background'=>$request->input('background')]
+        );
+        $board_id = Board::where('title',$request->input('title'))->max('id');
+        Userboard::insert([
+            ['user_id'=>$request->input('user_id'), 'board_id'=>$board_id]
+        ]);
         return back();
     }
 }
