@@ -9,14 +9,14 @@
 		<div class="row">
 		@foreach($boards as $p)
 	  		<div class="col-md-4" style="padding-bottom: 20px;">
-	    		<a class="card card-board" id="board{{$p->id}}" href="/board/{{$p->id}}" style="background-color: {{$p->background}}; height: 75px; cursor: pointer;">
+	    		<div class="card card-board" id="board{{$p->id}}" onclick="window.open('{{ URL::to('/board/'.$p->id) }}');" style="background-color: {{$p->background}}; height: 75px; cursor: pointer;">
 	    	  		<div class="card-body">
 	        			<h5 class="card-title">{{$p->title}}</h5>
 	        			<div class="text-view transition">
 	                    	<h4>View Details</h4>
 	                	</div>
 	      			</div>
-	    		</a>
+	    		</div>
 	  		</div>
 		@endforeach
 		</div>

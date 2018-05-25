@@ -428,3 +428,117 @@ footer p{
     transform: translate(-50%, -50%);
     opacity:0;
 }
+
+/*-----------------------------------------------------------*/
+/*----------------------TODOLIST-----------------------------*/
+
+.addtodolist{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.typeboard .card{
+    width: 100% !important;
+    background-color: transparent !important;
+    overflow: hidden;
+}
+
+
+.cards{
+    width: 100% !important;
+}
+
+.card .description{
+    font-size: 1em;
+}
+
+.col.typeboard{
+    background-color: transparent;
+    height: calc(100% - 110px);
+    margin-right: 15px;
+    border-top-right-radius: 10px;
+    box-shadow: 0 14px 26px rgba(0,0,0,0.1);
+    transition: transform 0.5s ease-out;
+}
+
+.col.typeboard:hover{
+    transform: translateY(0) scale(1) translateZ(0);
+}
+
+.col.typeboard .row{
+    padding: 10px 20px 10px 20px;
+}
+
+.somecircle{
+    position: absolute !important;
+    display: block;
+    background-color: #fff;
+    transition: transform 0.5s ease-out;
+    z-index: -10;
+}
+
+.card:hover .somecircle{
+  transform: scale(30) translateZ(0);
+  display: block !important;
+}
+
+:root {
+    --bg: #1a1e24;
+    --color: #eee;
+    --font: Montserrat, Roboto, Helvetica, Arial, sans-serif;
+}
+
+.satisfying .wrapper {
+    padding: 1.5rem 0;
+    filter: url('#goo');
+}
+
+.satisfying .button {
+    display: inline-block;
+    text-align: center;
+    background: var(--color);
+    color: var(--bg);
+    font-weight: bold;
+    padding: 1.18em 1.32em 1.03em;
+    line-height: 1;
+    border-radius: 1em;
+    position: relative;
+    min-width: 8.23em;
+    text-decoration: none;
+    font-family: var(--font);
+    font-size: 1.25rem;
+}
+
+.satisfying .button:before,
+.satisfying .button:after {
+    width: 4.4em;
+    height: 2.95em;
+    position: absolute;
+    content: "";
+    display: inline-block;
+    background: var(--color);
+    border-radius: 50%;
+    transition: transform 1s ease;
+    transform: scale(0);
+    z-index: -1;
+}
+
+.satisfying .button:before {
+    top: -25%;
+    left: 20%;
+}
+
+.satisfying .button:after {
+    bottom: -25%;
+    right: 20%;
+}
+
+.satisfying .button:hover:before,
+.satisfying .button:hover:after {
+    transform: none;
+}

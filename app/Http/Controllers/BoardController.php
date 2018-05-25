@@ -33,4 +33,16 @@ class BoardController extends Controller
         ]);
         return back();
     }
+
+    public function update(){
+        $data = request()->all();
+        $title = $data['title'];
+        $boardid = $data['board_id'];
+
+        Board::where('id',$boardid)->update(
+            ['title' => $title]
+        );
+
+        return response()->json(array('msg'=> $title), 200);
+    }
 }

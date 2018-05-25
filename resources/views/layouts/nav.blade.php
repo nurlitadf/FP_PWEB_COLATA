@@ -6,7 +6,7 @@
     	
     	<div style="float: left">
 	    	<a class="logocolata" href="{{ url('/') }}">
-	    		<img src="images/logocolata.png" alt>
+	    		<img src="{{asset('images/logocolata.png')}}" alt>
 	    	</a>
     	</div>
 
