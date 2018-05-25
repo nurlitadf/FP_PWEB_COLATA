@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Todolist;
 use App\Userboard;
 use App\User;
+use App\Board;
+use Auth;
 
 class TodolistController extends Controller
 {
@@ -23,9 +25,9 @@ class TodolistController extends Controller
         $user = Userboard::crossJoin('users','userboards.user_id','users.id')->where('userboards.board_id',$id)->get();
         $board = Board::where('id',$id)->first();
         $exists=Userboard::crossJoin('users','userboards.user_id','users.id')->where('userboards.board_id',$id)->where('userboards.user_id', Auth::user()->id)->count();
+        
         if($exists===0) return redirect('/home');
-        else return view('todolist', compact('todolist','id', 'user','error'));
-        return view('todolist', compact('todolist1','todolist2','todolist3','id', 'user', 'board'));
+        else return view('todolist', compact('todolist1','todolist2','todolist3','id', 'user', 'board'));
     }
 
     public function store(Request $request){
