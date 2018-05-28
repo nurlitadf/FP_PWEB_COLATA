@@ -61,7 +61,14 @@
 					    	<div class="extra content">
 					    		<i class="circular icon somecircle"></i>
 					    		<i class="circular inverted tasks icon"></i>
-					        	<i class="circular inverted blue check icon"></i>
+					    		<form action='/update_status' method='POST'>
+					    			{{csrf_field()}}
+					    			<input type="hidden" name="id" value={{$t1->id}}>
+					    			<input type="hidden" name="status" value={{$t1->status}}>
+					    			<button type="submit">
+					        			<i class="circular inverted blue check icon"></i>
+					        		</button>
+					        	</form>
 					    	</div>
 					  	</div>
 					  	@endforeach
@@ -90,7 +97,14 @@
 					    	<div class="extra content">
 					    		<i class="circular icon somecircle"></i>
 					    		<i class="circular inverted tasks icon"></i>
-					        	<i class="circular inverted blue check icon"></i>
+					        	<form action='/update_status' method='POST'>
+					    			{{csrf_field()}}
+					    			<input type="hidden" name="id" value={{$t2->id}}>
+					    			<input type="hidden" name="status" value={{$t2->status}}>
+					    			<button type="submit">
+					        			<i class="circular inverted blue check icon"></i>
+					        		</button>
+					        	</form>
 					    	</div>
 					  	</div>
 					  	@endforeach
@@ -119,7 +133,14 @@
 					    	<div class="extra content">
 					    		<i class="circular icon somecircle"></i>
 					    		<i class="circular small inverted tasks icon"></i>
-					        	<i class="circular small inverted blue check icon"></i>
+					        	<form action='/update_status' method='POST'>
+					    			{{csrf_field()}}
+					    			<input type="hidden" name="id" value={{$t3->id}}>
+					    			<input type="hidden" name="status" value={{$t3->status}}>
+					    			<button type="submit">
+					        			<i class="circular inverted blue check icon"></i>
+					        		</button>
+					        	</form>
 					    	</div>
 					  	</div>
 					  	@endforeach

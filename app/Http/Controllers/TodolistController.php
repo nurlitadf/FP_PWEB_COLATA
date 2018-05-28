@@ -18,9 +18,9 @@ class TodolistController extends Controller
     }
     
     public function show(int $id){
-        $todolist1 = Todolist::where('board_id',$id)->where('status',1)->get(); //todo
-        $todolist2 = Todolist::where('board_id',$id)->where('status',2)->get(); //doing
-        $todolist3 = Todolist::where('board_id',$id)->where('status',3)->get(); //done
+        $todolist1 = Todolist::where('board_id',$id)->where('status',1)->orderBy('deadline','asc')->get(); //todo
+        $todolist2 = Todolist::where('board_id',$id)->where('status',2)->orderBy('deadline','asc')->get(); //doing
+        $todolist3 = Todolist::where('board_id',$id)->where('status',3)->orderBy('deadline','asc')->get(); //done
         
         $user = Userboard::crossJoin('users','userboards.user_id','users.id')->where('userboards.board_id',$id)->get();
         $board = Board::where('id',$id)->first();
@@ -40,6 +40,13 @@ class TodolistController extends Controller
         Userboard::insert(
             ['user_id'=>$user_id, 'board_id'=>$request->input('board_id')]
         );
+        return back();
+    }
+
+    public function update_status(Request $request){
+        if($request->input('status')<3){
+            Todolist::where('id', $request->input('id'))->update(['status' => $request->input('status')+1]);
+        }
         return back();
     }
 }

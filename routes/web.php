@@ -22,24 +22,22 @@ Route::get('/welcome', function () {
 
 Route::get('/login', function () {
     return view('login');
-});
-
-Route::get('/board', function () {
-    return view('board');
-});
+})->name('login');
 
 Auth::routes();
 
-Route::get('/board', 'BoardController@index');
+Route::get('/board', 'BoardController@index')->name('board');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/addtodolist','TodolistController@store');
+Route::post('/addtodolist','TodolistController@store')->name('addtodolist');
 
-Route::post('/adds', 'BoardController@store');
+Route::post('/adds', 'BoardController@store')->name('adds');
 
-Route::post('/changes', 'BoardController@update');
+Route::post('/changes', 'BoardController@update')->name('changes');
 
 Route::get('/board/{id}','TodolistController@show');
 
-Route::post('/invite','TodolistController@adduser');
+Route::post('/invite','TodolistController@adduser')->name('invite');
+
+Route::post('/update_status','TodolistController@update_status')->name('update_status');
