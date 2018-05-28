@@ -44,9 +44,7 @@ class TodolistController extends Controller
     }
 
     public function update_status(Request $request){
-        if($request->input('status')<3){
-            Todolist::where('id', $request->input('id'))->update(['status' => $request->input('status')+1]);
-        }
+        Todolist::where('id', $request->input('id'))->update(['status' => $request->input('status')]);
         return back();
     }
 }

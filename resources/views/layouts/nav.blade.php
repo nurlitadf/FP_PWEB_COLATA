@@ -10,6 +10,8 @@
 	    	</a>
     	</div>
 
+    	@yield('navcontent')
+
     	<div style="float: right;">
     		@if(Request::is('/register') OR Request::is('/'))
     			@auth
