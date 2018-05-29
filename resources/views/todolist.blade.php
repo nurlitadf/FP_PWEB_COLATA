@@ -49,7 +49,9 @@
 			<h5>Done</h5>
 		</div>
 	</div>
-
+	@foreach($user as $u)
+		{{$u->username}}<br>
+	@endforeach
 	<div class="container" style="margin-left: 20px;">
 		{{-- <div class="btn red" href='{{ URL::to('/board/') }}'></div> --}}
 			<div class="col-md-3 card-columns-1 my-container-todo">
