@@ -31,7 +31,7 @@
         <div class="modal fade" id="createboardmodal" tabindex="-1" role="dialog" aria-labelledby="createboardmodallabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form action="/adds" method="POST">
+                <form action="{{route('adds') }}" method="POST">
 			     {{csrf_field()}}
                     <div class="modal-header" style="padding-bottom: 50px;">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

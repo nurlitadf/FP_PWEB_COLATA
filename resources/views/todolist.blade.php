@@ -63,7 +63,7 @@
 						<p class="card-text">{{$t1->keterangan}}</p>
 					</div>
 					<div class="card-footer">
-						<form action='/update_status' method='POST'>
+						<form action="{{route('update_status')}}" method='POST'>
 					    	{{csrf_field()}}
 					    	<input type="hidden" name="id" value={{$t1->id}}>
 					   		<input type="hidden" name="status" value=2>
@@ -71,7 +71,7 @@
 					        	<i class="circular inverted tasks icon"></i>
 					        </button>
 					    </form>
-					    <form action='/update_status' method='POST'>
+					    <form action="{{route('update_status')}}" method='POST'>
 					    	{{csrf_field()}}
 					    	<input type="hidden" name="id" value={{$t1->id}}>
 					   		<input type="hidden" name="status" value=3>
@@ -96,7 +96,7 @@
 						<p class="card-text">{{$t2->keterangan}}</p>
 					</div>
 					<div class="card-footer">
-						<form action='/update_status' method='POST'>
+						<form action="{{route('update_status')}}" method='POST'>
 					    	{{csrf_field()}}
 					    	<input type="hidden" name="id" value={{$t2->id}}>
 					   		<input type="hidden" name="status" value=2>
@@ -104,7 +104,7 @@
 					        	<i class="circular inverted tasks icon"></i>
 					        </button>
 					    </form>
-					    <form action='/update_status' method='POST'>
+					    <form action="{{route('update_status')}}" method='POST'>
 					    	{{csrf_field()}}
 					    	<input type="hidden" name="id" value={{$t2->id}}>
 					   		<input type="hidden" name="status" value=3>
@@ -129,7 +129,7 @@
 						<p class="card-text">{{$t3->keterangan}}</p>
 					</div>
 					<div class="card-footer">
-						<form action='/update_status' method='POST'>
+						<form action="{{route('update_status')}}" method='POST'>
 					    	{{csrf_field()}}
 					    	<input type="hidden" name="id" value={{$t3->id}}>
 					   		<input type="hidden" name="status" value=2>
@@ -137,7 +137,7 @@
 					        	<i class="circular inverted tasks icon"></i>
 					        </button>
 					    </form>
-					    <form action='/update_status' method='POST'>
+					    <form action="{{route('update_status')}}" method='POST'>
 					    	{{csrf_field()}}
 					    	<input type="hidden" name="id" value={{$t3->id}}>
 					   		<input type="hidden" name="status" value=3>
@@ -172,7 +172,7 @@
 	<div class="modal fade" id="addnewtodo" tabindex="-1" role="dialog" aria-labelledby="addnewtodolabel" aria-hidden="true">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
-			    <form action="/addtodolist" method="POST">
+			    <form action="{{route('addtodolist')}}" method="POST">
 				{{csrf_field()}}
 			         <div class="modal-header" style="flex-direction: row;">
 			            <h5 class="modal-title">Add New TodoList</h5>
@@ -214,7 +214,7 @@
 					var formdata = changetitleform.serialize();
 
 					$.ajax({
-						url:'/changes',
+						url:'{{route('changes')}}',
 						type:'POST',
 						data:formdata,
 						success: function(data){
