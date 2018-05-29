@@ -13,7 +13,7 @@
 	<meta property="og:site_name" content="">
 	<meta property="og:description" content="">
 
-	<link rel="shortcut icon" type="image/png" href="/images/logo.png"/>
+	<link rel="shortcut icon" type="image/png" href="{{ asset('/images/logo.png') }}"/>
 	<link href="{{ asset('css/app.css') }}" rel="stylesheet">
 	<link rel="stylesheet" href="{{asset('css/styles.css')}}">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.2/css/bootstrap-colorpicker.css" integrity="sha256-iu+Hq7JHYN0rAeT3Y+c4lEKIskeGgG/MpAyrj6W9iTI=" crossorigin="anonymous" />

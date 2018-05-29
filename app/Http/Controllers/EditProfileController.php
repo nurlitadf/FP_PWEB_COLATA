@@ -28,9 +28,9 @@ class EditProfileController extends Controller
     	}
     	else if($exists==0){
 	    	User::where('id', Auth::user()->id)->update(
-	    		['name' => $request->input("name")],
-	    		['username' => $request->input("username")],
-	    		['email' => $request->input("email")]
+	    		['name' => $request->input("name"),
+	    		'username' => $request->input("username"),
+	    		'email' => $request->input("email")]
 	    	);
 	    	$error="Your profile is updated!";
     	}
