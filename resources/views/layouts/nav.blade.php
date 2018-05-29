@@ -1,6 +1,3 @@
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	crossorigin="anonymous"></script>
-
 @if (Route::has('login'))
     <div class="top-right links header clear">
     	
@@ -21,12 +18,6 @@
             		<a class="navlink" href="{{ route('login') }}">Login</a>
         		@endauth
         	@else
-        		<script type="text/javascript">
-        			$(document).ready(function() {
-        				$('.header').addClass('header-sticky');
-    				});
-					
-				</script>
         		@guest
 		            <a class="navlink" href="{{ route('register') }}">Register</a>
             		<a class="navlink" href="{{ route('login') }}">Login</a>

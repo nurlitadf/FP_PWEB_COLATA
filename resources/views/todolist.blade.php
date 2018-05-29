@@ -1,5 +1,4 @@
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	crossorigin="anonymous"></script>
+
 
 @extends('layouts.master')
 @section('content')
@@ -39,7 +38,17 @@
 		</div>
 	</div>
 
-
+	<div class="container" style="margin-left: 20px;">
+		<div class="col-md-3 card-columns-1 my-container-todo-nav">
+			<h5>To Do</h5>
+		</div>
+		<div class="col-md-3 card-columns-1 my-container-todo-nav">
+			<h5>Doing</h5>
+		</div>
+		<div class="col-md-3 card-columns-1 my-container-todo-nav">
+			<h5>Done</h5>
+		</div>
+	</div>
 
 	<div class="container" style="margin-left: 20px;">
 		{{-- <div class="btn red" href='{{ URL::to('/board/') }}'></div> --}}
@@ -143,8 +152,6 @@
 				<div class="wrapper">
 				    <a class="button" data-toggle="modal" data-target="#addnewtodo">New TodoList</a>
 				</div>
-
-				<!-- Filter: https://css-tricks.com/gooey-effect/ -->
 				<svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
 				    <defs>
 				        <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
@@ -173,7 +180,12 @@
 			        </div>
 			        <div class="modal-body">
 			            <input class="form-control form-control-sm" id="addnewtodolabel" type="text" placeholder="TodoList Title" style="width: 75%;" name="title">
-			            <input class="form-control form-control-sm" type="datetime" placeholder="Deadline" name="deadline">
+			            <div class="ui calendar" id="deadlinecal">
+						    <div class="ui input left icon">
+						      	<i class="calendar icon"></i>
+						      	<input type="text" class="form-control form-control-sm" name="deadline" placeholder="Deadline">
+						    </div>
+						</div>
 			            <input class="form-control form-control-sm" type="text" placeholder="Description" name="keterangan">
 			            <input type="hidden" name="board_id" value={{$id}} >
 						<input type="hidden" name="status" value="1">
@@ -187,37 +199,47 @@
 		</div>
 	</div>
 
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('body').css("background-color", "{{$board->background}}");
+			$('.header').css("background-color", "transparent");
+
+			$('#submitchangetitle').click(function(){
+				var changetitleform = $('#changetitleform');
+				changetitleform.submit(function(e){
+					e.preventDefault();
+					var formdata = changetitleform.serialize();
+
+					$.ajax({
+						url:'/changes',
+						type:'POST',
+						data:formdata,
+						success: function(data){
+							
+							$('#changeboardtitle').modal('hide');
+							$('.modal-backdrop').remove();
+							$('#boardtitlenow').html(data['msg']);
+						},
+					});
+				})
+			});
+
+			$('#deadlinecal').calendar({
+				monthFirst: false,
+				ampm: false,
+				formatter: {
+					date: function (date, settings) {
+				    	if (!date) return '';
+				    	var day= date.getDate();
+				    	var month= date.getMonth()+1;
+				    	var year= date.getFullYear();
+				    	return year+'-'+month+'-'+day;
+				    }
+				}
+			});
+		});
+	</script>
 
 	
 @endsection
 
-<script type="text/javascript">
-	$(document).ready(function() {
-		$('body').css("background-color", "{{$board->background}}");
-		$('.header').css("background-color", "transparent");
-
-		$('#submitchangetitle').click(function(){
-			var changetitleform = $('#changetitleform');
-			changetitleform.submit(function(e){
-				e.preventDefault();
-				var formdata = changetitleform.serialize();
-
-				$.ajax({
-					url:'/changes',
-					type:'POST',
-					data:formdata,
-					success: function(data){
-						
-						$('#changeboardtitle').modal('hide');
-						$('.modal-backdrop').remove();
-						$('#boardtitlenow').html(data['msg']);
-					},
-				});
-			})
-		});
-
-
-	});
-
-
-</script>

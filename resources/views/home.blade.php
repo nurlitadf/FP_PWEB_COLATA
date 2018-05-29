@@ -50,7 +50,7 @@
           </div>
         </div>
     </div>
-    <script src="{{asset('js/bootstrap-colorpicker.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-colorpicker/2.5.2/js/bootstrap-colorpicker.js" integrity="sha256-8Nlu4neAzrQQ1uUN7ebQuMlACoFlPzY6d2ELaq6MQlE=" crossorigin="anonymous"></script>
     <script>
         $('#change-color').colorpicker().on('changeColor', function(e){
             console.log(e.color.toString('rgba'));

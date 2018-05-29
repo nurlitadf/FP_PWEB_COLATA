@@ -17,7 +17,7 @@
         </div>
 
     </header>
-    
+
     <section class="intro">
         <div class="container center">
             <h2>Colata lets you work more collaboratively and get more done.</h2>
@@ -76,8 +76,4 @@
     <footer class="quiet">
         <p>Ayam Goreng. Copyright 2018. All rights reserved.</p>
     </footer>
-        
-
-    
-    
 @endsection
