@@ -14,7 +14,7 @@
 				<div class="card-block">
 					<a class="btn red" href='{{ URL::to('/board/'.$p->id) }}'></a>
 				</div>
-
+				<a href='{{ URL::to('/deleteboard/'.$p->id) }}'>DELETE</a>
 			</div>
 		@endforeach
 		</div>

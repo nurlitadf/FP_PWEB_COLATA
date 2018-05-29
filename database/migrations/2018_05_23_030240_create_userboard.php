@@ -15,9 +15,9 @@ class CreateUserboard extends Migration
     {
         Schema::create('userboards', function(Blueprint $table){
             $table->integer('board_id')->unsigned();
-            $table->foreign('board_id')->references('id')->on('boards');
+            $table->foreign('board_id')->references('id')->on('boards')->onDelete('cascade');
             $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

@@ -45,4 +45,9 @@ class BoardController extends Controller
 
         return response()->json(array('msg'=> $title), 200);
     }
+
+    public function delete(int $id){
+        Board::where('id',$id)->delete();
+        return back();
+    }
 }

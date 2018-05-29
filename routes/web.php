@@ -38,6 +38,8 @@ Route::post('/changes', 'BoardController@update')->name('changes');
 
 Route::get('/board/{id}','TodolistController@show');
 
+Route::get('/deleteboard/{id}','BoardController@delete');
+
 Route::post('/invite','TodolistController@adduser')->name('invite');
 
 Route::post('/update_status','TodolistController@update_status')->name('update_status');
