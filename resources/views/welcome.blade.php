@@ -34,13 +34,13 @@
                 </div>
 
                 <div class="col-lg-8 col-md-6 image safarifix" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;">
-                    <img class="main" src="/images/remember.png" alt>
+                    <img class="main" src="{{asset('images/remember.png')}}" alt>
                     <div class="icons">
-                        <img class="icon layer skrollable" data-600="margin-top: 130px" data-1400="margin-top: 0px" data-depth="0.35" src="/images/remembericon1.png" alt syle="margin-top: 130px; transform: translate3d(13.4px, 10px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
+                        <img class="icon layer skrollable" data-600="margin-top: 130px" data-1400="margin-top: 0px" data-depth="0.35" src="{{asset('/images/remembericon1.png')}}" alt syle="margin-top: 130px; transform: translate3d(13.4px, 10px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: relative; display: block; left: 0px; top: 0px;">
 
-                        <img class="icon layer skrollable" data-600="margin-right: -50px" data-2000="margin-right: 50px" data-depth="0.55" src="/images/remembericon2.png" alt syle="margin-right: -50px; transform: translate3d(21px, 15.7px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+                        <img class="icon layer skrollable" data-600="margin-right: -50px" data-2000="margin-right: 50px" data-depth="0.55" src="{{asset('/images/remembericon2.png')}}" alt syle="margin-right: -50px; transform: translate3d(21px, 15.7px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
 
-                        <img class="icon layer skrollable" data-600="margin-left: -200px" data-2000="margin-left: 50px" data-depth="0.35" src="/images/remembericon3.png" alt syle="margin-left: -200px; transform: translate3d(13.4px, 10px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
+                        <img class="icon layer skrollable" data-600="margin-left: -200px" data-2000="margin-left: 50px" data-depth="0.35" src="{{asset('/images/remembericon3.png')}}" alt syle="margin-left: -200px; transform: translate3d(13.4px, 10px, 0px); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;">
                     </div>
                 </div>
             </div>
@@ -52,7 +52,7 @@
                 </div>
 
                 <div class="col-lg-8 col-md-6 image safarifix" style="transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; pointer-events: none;">
-                    <img class="main" src="/images/team.png" alt>
+                    <img class="main" src="{{asset('/images/team.png')}}" alt>
 
                     <div class="icons">
                         <span class="circle layer skrollable" data-depth="0.40" data-1000="margin-top:400px" data-3000="margin-top:-300px" style="margin-top: 400px; transform: translate3d(0px, 0px, 0px) rotate(0.0001deg); transform-style: preserve-3d; backface-visibility: hidden; position: absolute; display: block; left: 0px; top: 0px;"></span>
