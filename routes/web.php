@@ -59,3 +59,13 @@ Route::get('/editprofile', function(){
 Route::post('/updateprofile','EditProfileController@edit')->name('updateprofile');
 
 Route::post('/editpassword','EditProfileController@updatepassword')->name('editpassword');
+
+Route::get('/image-upload','EditProfileController@imageUpload')->name('image-upload');
+
+Route::post('/image-upload','EditProfileController@imageUploadPost')->name('image-upload');
+
+
+
+Route::get('/imageUpload', function () {
+    return view('imageUpload');
+});
