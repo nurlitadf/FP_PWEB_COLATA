@@ -9,7 +9,7 @@
         </button>
         @foreach($user as $u)
         	<button class="button-ava-team">
-        		<img alt="User Pic" src="{{asset('storage/img/'.{{$u->avatar}})}}" class="img-circle img-responsive img-team-nav">
+        		<img alt="User Pic" src="{{asset('storage/img/'.$u->avatar)}}" class="img-circle img-responsive img-team-nav">
 			</button>
 		@endforeach
 	@endsection
