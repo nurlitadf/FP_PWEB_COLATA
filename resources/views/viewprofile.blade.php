@@ -10,7 +10,7 @@
                     <div class="panel-body">
                    		<div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
                    			<i class="edit outline large icon" data-toggle="modal" data-target="#editfotoprofilmodal" style="    float: left;"></i>
-                       		<img alt="User Pic" src="/storage/img/{{ Auth::user()->avatar }}" id="profile-image1" class="img-circle img-responsive"> 
+                       		<img alt="User Pic" src="/storage/img/{{ Auth::user()->avatar }}" id="profile-image1" class="img-circle img-responsive img-profile"> 
                     	</div>
 
 					    <i class="edit outline large icon" data-toggle="modal" data-target="#editprofilmodal"></i>

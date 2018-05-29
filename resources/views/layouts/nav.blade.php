@@ -45,7 +45,7 @@
 		                    </form>
 		                </div>
 		            </div>
-		            <img alt="User Pic" src="/storage/img/{{ Auth::user()->avatar }}" class="img-circle img-responsive" style="float: right; height: 45px; padding-right: 20px; padding: 5px;">
+		            <img alt="User Pic" src="/storage/img/{{ Auth::user()->avatar }}" class="img-circle img-responsive img-prof-nav">
 		        @endguest
     		@endif
       	</div>

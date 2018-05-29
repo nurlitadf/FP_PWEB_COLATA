@@ -7,6 +7,11 @@
 		<button type="button" id="boardtitlenow" class="btn btn-sm btn-light" data-toggle="modal" data-target="#changeboardtitle">
             {{$board->title}}
         </button>
+        @foreach($user as $u)
+        	<button class="button-ava-team">
+        		<img alt="User Pic" src="{{asset('storage/img/'.{{$u->avatar}})}}" class="img-circle img-responsive img-team-nav">
+			</button>
+		@endforeach
 	@endsection
 
 	<div class="container" style="margin-top: 65px;">
@@ -49,9 +54,7 @@
 			<h5>Done</h5>
 		</div>
 	</div>
-	@foreach($user as $u)
-		{{$u->username}}<br>
-	@endforeach
+	
 	<div class="container" style="margin-left: 20px;">
 		{{-- <div class="btn red" href='{{ URL::to('/board/') }}'></div> --}}
 			<div class="col-md-3 card-columns-1 my-container-todo">
@@ -153,6 +156,20 @@
 				@endforeach
 			</div>
 
+			<div class="addteam satisfying">
+				<div class="wrapper">
+				    <a class="button" data-toggle="modal" data-target="#addnewteam">Invite</a>
+				</div>
+				<svg style="visibility: hidden; position: absolute;" width="0" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1">
+				    <defs>
+				        <filter id="goo"><feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />    
+				            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="goo" />
+				            <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+				        </filter>
+				    </defs>
+				</svg>
+			</div>
+
 			<div class="addtodolist satisfying">
 				<div class="wrapper">
 				    <a class="button" data-toggle="modal" data-target="#addnewtodo">New TodoList</a>
@@ -198,6 +215,32 @@
 			        <div class="modal-footer">
 			            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 			            <button class="btn btn-primary" type="submit" name="submit">Save</button>
+			        </div>
+			    </form>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="addnewteam" tabindex="-1" role="dialog" aria-labelledby="addnewteamlabel" aria-hidden="true">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+			    <form action="{{route('invite')}}" method="POST">
+				{{csrf_field()}}
+			         <div class="modal-header" style="flex-direction: row;">
+			            <h5 class="modal-title">Invite Friends</h5>
+			            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                <span aria-hidden="true">&times;</span>
+			            </button>
+			                    	
+			        </div>
+			        <div class="modal-body">
+			        	<h4>Invite User</h4>
+			            <input class="form-control form-control-sm" id="addnewteamlabel" type="text" name="username">
+			            <input type="hidden" name="board_id" value={{$id}} > 
+			        </div>
+			        <div class="modal-footer">
+			            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+			            <button class="btn btn-primary" type="submit" name="submit">Invite</button>
 			        </div>
 			    </form>
 			</div>
