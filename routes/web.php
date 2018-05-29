@@ -41,3 +41,17 @@ Route::get('/board/{id}','TodolistController@show');
 Route::post('/invite','TodolistController@adduser')->name('invite');
 
 Route::post('/update_status','TodolistController@update_status')->name('update_status');
+
+Route::get('/viewprofile', function(){
+	return view('viewprofile');
+})->name('viewprofile');
+
+Route::get('/editprofile', function(){
+	$error="";
+	$log="";
+	return view('editprofile', compact('error','log'));
+})->name('editprofile');
+
+Route::post('/updateprofile','EditProfileController@edit')->name('updateprofile');
+
+Route::post('/editpassword','EditProfileController@updatepassword')->name('editpassword');
