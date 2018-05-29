@@ -47,4 +47,9 @@ class TodolistController extends Controller
         Todolist::where('id', $request->input('id'))->update(['status' => $request->input('status')]);
         return back();
     }
+
+    public function delete(int $id){
+        Todolist::where('id',$id)->delete();
+        return back();
+    }
 }

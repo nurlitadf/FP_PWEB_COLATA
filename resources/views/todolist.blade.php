@@ -79,6 +79,7 @@
 					        	<i class="circular inverted blue check icon"></i>
 					        </button>
 					    </form>
+					    <a href='{{ URL::to('/deletetodolist/'.$t1->id) }}'>DELETE</a>
 					</div>
 				</div>
 				@endforeach
@@ -111,6 +112,7 @@
 					        	<i class="circular inverted blue check icon"></i>
 					        </button>
 					    </form>
+					    <a href='{{ URL::to('/deletetodolist/'.$t2->id) }}'>DELETE</a>
 					</div>
 				</div>
 				@endforeach
@@ -143,6 +145,7 @@
 					        	<i class="circular inverted blue check icon"></i>
 					        </button>
 					    </form>
+					    <a href='{{ URL::to('/deletetodolist/'.$t3->id) }}'>DELETE</a>
 					</div>
 				</div>
 				@endforeach
