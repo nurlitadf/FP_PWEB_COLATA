@@ -689,3 +689,14 @@ button.btn.red:hover{
 .card-footer form{
     float: left;
 }
+
+/*---------------------Edit Profil---------------------*/
+
+.panel.panel-default{
+    max-width: 100%;
+}
+
+i.edit{
+    float: right;
+    cursor: pointer;
+}

@@ -1,3 +1,10 @@
+{{-- 
+
+
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +21,15 @@
 		{{$error}}<br>
 	</form>
 
+	<form action={{route('image-upload')}} method="post" enctype="multipart/form-data">
+                {{csrf_field()}}
+                <div class="form-group">
+                    <input type="file" class="form-control-file" name="avatar" id="avatar" aria-describedby="fileHelp">
+                    <small id="fileHelp" class="form-text text-muted">Please upload a valid image file. Size of image should not be more than 2MB.</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+
 	<form action={{route('editpassword')}} method="post">
 		{{csrf_field()}}
 		Old Password : <input type="password" name="oldpassword"> <br>
@@ -23,4 +39,4 @@
 		{{$log}}<br>
 	</form>
 </body>
-</html>
+</html> --}}

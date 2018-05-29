@@ -1,7 +1,7 @@
 @extends('home')
 @section('boardcontent')
 	<div class="personalboard">
-		<h3>Personal Board</h3>
+		<h3>My Board</h3>
 		
 		<div class="card-columns my-container">
 		@foreach($boards as $p)

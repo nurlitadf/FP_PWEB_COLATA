@@ -39,7 +39,7 @@ class EditProfileController extends Controller
 
     	}
     	$log="";
-    	return view("/editprofile", compact('error','log'));
+    	return view("/viewprofile", compact('error','log'));
     }
 
     public function updatepassword(Request $request){
@@ -57,11 +57,11 @@ class EditProfileController extends Controller
 	    	$log="Your password is updated!";
     	}
     	$error="";
-    	return view("/editprofile", compact('error','log'));
+    	return view("/editprofile");
     }
 
     public function imageUpload(){
-        return view('imageUpload');
+        return view("/editprofile");
     }
 
     public function imageUploadPost(Request $request){
