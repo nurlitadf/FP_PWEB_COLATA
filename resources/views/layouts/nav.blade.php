@@ -24,7 +24,7 @@
 		        @else
 		            <div class="nav-item dropdown">
 		                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-		                    {{ Auth::user()->name }} <span class="caret"></span>
+		                    {{ Auth::user()->name }}
 		                </a>
 
 		                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -35,6 +35,15 @@
 		                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 		                        {{ csrf_field() }}
 		                    </form>
+
+		                    <a class="dropdown-item" href="{{ route('viewprofile') }}" onclick="event.preventDefault(); document.getElementById('view-profile').submit();">
+		                    	Profile
+		                    </a>
+
+		                    <form id="view-profile" action="{{ route('viewprofile') }}" method="GET">
+                    			{{csrf_field()}}
+                			</form>
+
 		                </div>
 		            </div>
 		        @endguest

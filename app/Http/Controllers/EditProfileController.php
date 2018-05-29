@@ -59,4 +59,24 @@ class EditProfileController extends Controller
     	$error="";
     	return view("/editprofile", compact('error','log'));
     }
+
+    public function imageUpload(){
+        return view('imageUpload');
+    }
+
+    public function imageUploadPost(Request $request){
+        $request->validate([
+            'avatar' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $filenameWithExt = $request->file('avatar')->getClientOriginalName();
+        $filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
+        $extension = $request->file('avatar')->getClientOriginalExtension();
+        $fileNametoStore = Auth::user()->id.'.'.$extension;
+        $path = $request->file('avatar')->storeAs('img',$fileNametoStore);
+
+        $data = Auth::user();
+        $data->avatar = $fileNametoStore;
+        $data->save();
+    }
 }

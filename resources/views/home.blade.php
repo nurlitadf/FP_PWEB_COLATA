@@ -21,10 +21,6 @@
                     <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                     Create Board
                 </button>
-                <form action="{{ route('viewprofile') }}" method="get">
-                    {{csrf_field()}}
-                    <button type="submit" onclick="">View Profile</button>
-                </form>
             </div>
         </div>
 
